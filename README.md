@@ -1,9 +1,10 @@
 ![](libkge-logo.png)
 
-LibKGE is a library for knowledge graph embedding models.
 
 [![Requirements Status](https://requires.io/github/samehkamaleldin/libkge/requirements.svg?branch=master)](https://requires.io/github/samehkamaleldin/libkge/requirements/?branch=master)
+[![Build Status](https://travis-ci.com/samehkamaleldin/libkge.svg?branch=master)](https://travis-ci.com/samehkamaleldin/libkge)
 
+LibKGE is a library for knowledge graph embedding models using `tensorflow`. The knowledge graph embedding models implemented in the library are compatible with `scikit-learn` apis.
 ## Installation
 The library is tested and guaranteed to work on both linux and mac.
 

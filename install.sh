@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export PATH=$PATH:$HOME/miniconda/bin
 # ---------------------------------------------------------------------------
 # update conda
 conda update -n base conda
@@ -19,5 +20,5 @@ conda install numpy tqdm scikit-klearn -y
 # ---------------------------------------------------------------------------
 # install tensorflow: choose the relevant version
 # ---------------------------------------------------------------------------
-# conda install -y tensorflow
+conda install -y tensorflow
 # conda install -y tensorflow-gpu
