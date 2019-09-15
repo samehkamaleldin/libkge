@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 export PATH=$PATH:$HOME/miniconda/bin
+source activate libkge
+
 # ---------------------------------------------------------------------------
 # update conda
 conda update -n base conda
