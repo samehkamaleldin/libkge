@@ -21,7 +21,7 @@ install:
   - 'conda create --yes -n libkge python=$TRAVIS_PYTHON_VERSION'
   - 'source activate libkge'
   - 'pip install -r requirements.txt'
-  - 'conda install -y tensorflow'
+  - 'pip install tensorflow'
   - 'conda install -c conda-forge pytest -y'
   - 'conda install -c conda-forge pytest-cov -y'
   - 'conda install -c conda-forge codecov -y'
