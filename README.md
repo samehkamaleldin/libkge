@@ -3,6 +3,7 @@
 
 [![Requirements Status](https://requires.io/github/samehkamaleldin/libkge/requirements.svg?branch=master)](https://requires.io/github/samehkamaleldin/libkge/requirements/?branch=master)
 [![Build Status](https://travis-ci.com/samehkamaleldin/libkge.svg?branch=master)](https://travis-ci.com/samehkamaleldin/libkge)
+[![codecov](https://codecov.io/gh/samehkamaleldin/libkge/branch/master/graph/badge.svg)](https://codecov.io/gh/samehkamaleldin/libkge)
 
 LibKGE is a library for knowledge graph embedding models using `tensorflow`. The knowledge graph embedding models implemented in the library are compatible with `scikit-learn` apis.
 ## Installation
@@ -10,7 +11,7 @@ The library is tested and guaranteed to work on both linux and mac.
 
 #### System requirements
 - Linux (CPU and GPU) and MacOS (CPU only)
-- Python 3.5
+- Python >= 3.5
 
 #### Python environments
 We strongly recommend that you use a conda virtual environment for working with the library. You can initialise a new conda enviroment for the library as follows:
