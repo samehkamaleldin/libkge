@@ -2,6 +2,8 @@
 
 LibKGE is a library for knowledge graph embedding models.
 
+[![Requirements Status](https://requires.io/github/samehkamaleldin/libkge/requirements.svg?branch=master)](https://requires.io/github/samehkamaleldin/libkge/requirements/?branch=master)
+
 ## Installation
 The library is tested and guaranteed to work on both linux and mac.
 

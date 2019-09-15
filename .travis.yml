@@ -13,6 +13,7 @@ before_install:
   - hash -r
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
+  - export PATH=$PATH:$HOME/miniconda/bin
   # Useful for debugging any issues with conda
   - conda info -a
 
