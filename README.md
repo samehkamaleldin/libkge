@@ -1,4 +1,4 @@
-![](libkge-logo.png)
+<img src="libkge-logo.png" width=350px/>
 
 
 [![Requirements Status](https://requires.io/github/samehkamaleldin/libkge/requirements.svg?branch=master)](https://requires.io/github/samehkamaleldin/libkge/requirements/?branch=master)
