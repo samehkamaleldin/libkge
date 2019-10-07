@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.pipeline import Pipeline
-from libkge.datasets import load_dataset
+from libkge.datasets import load_dataset_from_dir
 from libkge.model_selection import KGEGridSearch, evaluate_kge_model_lp, print_lp_eval_result
 from libkge.embedding.models import *
 
@@ -11,7 +11,9 @@ if __name__ == '__main__':
     seed = 1234
 
     # load kg dataset
-    dataset = load_dataset("kinship", "kinship")
+    # load kg dataset
+    dataset_dir = "../data/kinship/kinship"
+    dataset = load_dataset_from_dir(dataset_dir)
     train_data = dataset.data["train"]
     valid_data = dataset.data["valid"]
     test_data = dataset.data["test"]
