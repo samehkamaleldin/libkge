@@ -22,5 +22,5 @@ conda install numpy tqdm scikit-klearn -y
 # ---------------------------------------------------------------------------
 # install tensorflow: choose the relevant version
 # ---------------------------------------------------------------------------
-conda install -y tensorflow
+conda install -y tensorflow=1.14
 # conda install -y tensorflow-gpu
