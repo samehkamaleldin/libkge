@@ -8,7 +8,7 @@ class TransE(KnowledgeGraphEmbeddingModel):
     """
 
     def __init__(self, em_size=100, batch_size=128, nb_epochs=100, initialiser="xavier_uniform", nb_negs=2, margin=1.0,
-                 optimiser="amsgrad", lr=0.01, similarity="none", nb_ents=0, nb_rels=0, reg_wt=0.01, loss="default",
+                 optimiser="amsgrad", lr=0.01, similarity="l1", nb_ents=0, nb_rels=0, reg_wt=0.01, loss="default",
                  seed=1234, verbose=1, log_interval=5):
         """ Initialise new instance of the class TranslatingEmbeddingModel
 
@@ -75,8 +75,6 @@ class TransE(KnowledgeGraphEmbeddingModel):
             scores = tf.norm(em_interactions, ord=1, axis=1)
         elif self.similarity.lower() == "l2":
             scores = tf.norm(em_interactions, ord=2, axis=1)
-        elif self.similarity.lower() == "none":
-            pass
         else:
             raise ValueError("Unknown similarity type (%s)." % self.similarity)
 
@@ -102,7 +100,7 @@ class TransE(KnowledgeGraphEmbeddingModel):
         """
         if self.loss == "default":
             pos_scores, neg_scores = tf.split(scores, num_or_size_splits=2)
-            return pairwise_logistic_loss(pos_scores, neg_scores, self.margin, reduction_type="avg")
+            return pairwise_logistic_loss(pos_scores, neg_scores, reduction_type="avg")
         else:
             return compute_kge_loss(scores, self.loss, reduction_type="avg")
 
