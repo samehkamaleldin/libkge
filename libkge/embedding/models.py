@@ -75,6 +75,8 @@ class TransE(KnowledgeGraphEmbeddingModel):
             scores = tf.norm(em_interactions, ord=1, axis=1)
         elif self.similarity.lower() == "l2":
             scores = tf.norm(em_interactions, ord=2, axis=1)
+        elif self.similarity.lower() == "none":
+            pass
         else:
             raise ValueError("Unknown similarity type (%s)." % self.similarity)
 
