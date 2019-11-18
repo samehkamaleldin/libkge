@@ -8,7 +8,7 @@ class TransE(KnowledgeGraphEmbeddingModel):
     """
 
     def __init__(self, em_size=100, batch_size=128, nb_epochs=100, initialiser="xavier_uniform", nb_negs=2, margin=1.0,
-                 optimiser="amsgrad", lr=0.01, similarity="l1", nb_ents=0, nb_rels=0, reg_wt=0.01, loss="default",
+                 optimiser="amsgrad", lr=0.01, similarity="none", nb_ents=0, nb_rels=0, reg_wt=0.01, loss="default",
                  seed=1234, verbose=1, log_interval=5):
         """ Initialise new instance of the class TranslatingEmbeddingModel
 
@@ -100,7 +100,7 @@ class TransE(KnowledgeGraphEmbeddingModel):
         """
         if self.loss == "default":
             pos_scores, neg_scores = tf.split(scores, num_or_size_splits=2)
-            return pairwise_hinge_loss(pos_scores, neg_scores, self.margin, reduction_type="avg")
+            return pairwise_logistic_loss(pos_scores, neg_scores, self.margin, reduction_type="avg")
         else:
             return compute_kge_loss(scores, self.loss, reduction_type="avg")
 
@@ -194,7 +194,7 @@ class DistMult(KnowledgeGraphEmbeddingModel):
         if self.loss == "default":
             pos_scores, neg_scores = tf.split(scores, num_or_size_splits=2)
             targets = tf.concat((tf.ones(tf.shape(pos_scores)), -1 * tf.ones(tf.shape(neg_scores))), axis=0)
-            return pointwise_hinge_loss(scores, targets=targets, margin=self.margin, reduction_type="avg")
+            return pointwise_square_error_loss(scores, targets=targets, margin=self.margin, reduction_type="avg")
         else:
             return compute_kge_loss(scores, self.loss, reduction_type="avg")
 
