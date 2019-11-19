@@ -185,6 +185,12 @@ def compute_kge_loss(scores, loss_type, reduction_type="sum", *args, **kwargs):
     elif loss_type == "pt_hinge" or loss_type == "pointwise_hinge_loss":
         loss = pointwise_hinge_loss(scores, targets, *args, **kwargs)
 
+    elif loss_type == "pr_hinge" or loss_type == "pairwise_hinge_loss":
+        loss = pairwise_hinge_loss(positive_scores, negative_scores, *args, **kwargs)
+
+    elif loss_type == "pr_log" or loss_type == "pairwise_logistic_loss":
+        loss = pairwise_logistic_loss(positive_scores, negative_scores, *args, **kwargs)
+
     else:
         raise ValueError("Unknown loss type (%s)" % loss_type)
 
