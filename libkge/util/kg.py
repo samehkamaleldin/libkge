@@ -133,7 +133,7 @@ class KgDataset:
             relation indices array
         """
         if isinstance(rel_labels, Iterable):
-            return np.array([self.ent_mappings[l] for l in rel_labels])
+            return np.array([self.rel_mappings[l] for l in rel_labels])
         else:
             return self.rel_mappings[str(rel_labels)]
 
