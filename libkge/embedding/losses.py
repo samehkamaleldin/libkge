@@ -17,8 +17,10 @@ def reduce_loss(loss_vector, reduction_type):
         return tf.reduce_sum(loss_vector)
     elif reduction_type == "avg" or reduction_type == "average":
         return tf.reduce_mean(loss_vector)
+    elif reduction_type == "none" or reduction_type == "raw":
+        return loss_vector
     else:
-        raise ValueError("Unknown reduction type (%s). options are ['sum', 'avg']" % reduction_type)
+        raise ValueError("Unknown reduction type (%s). options are ['sum', 'avg', 'none']" % reduction_type)
 
 
 def pointwise_hinge_loss(scores, targets, margin=1.0, reduction_type="sum", *args, **kwargs):
